@@ -1,4 +1,4 @@
-3 How to organize the go struct, in order to save memory.
+# How to organize the go struct, in order to save memory.
 
 In this article I want to explain you how the memory works internally, when you instantiate a struct. (You can play with the code https://play.golang.org/p/cUgB54yCpL )
 
