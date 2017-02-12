@@ -1,6 +1,6 @@
 # How to organize the go struct, in order to save memory.
 
-In this article I want to explain you how the memory works internally, when you instantiate a struct. (You can play with the code https://play.golang.org/p/cUgB54yCpL )
+In this article I want to explain you how the memory works internally in a 64 bit architecture, when you instantiate a struct. (You can play with the code https://play.golang.org/p/cUgB54yCpL )
 
 ## How memory works internally :
 
@@ -30,8 +30,8 @@ It’s possible to optimize, ordering the struct by bytes taken :
 ```golang
 type myStructOptimized struct {
  myFloat float64 // 8 bytes
- myInt   int32   // 4 bytes
  myBool  bool    // 1 byte
+ myInt   int32   // 4 bytes
 }
 ```
 This new struct ordered will take now :
@@ -39,7 +39,7 @@ This new struct ordered will take now :
 b := myStructOptimized{}
 fmt.Println(unsafe.Sizeof(b)) // ordered 16 bytes
 ```
-16 bytes, because in memory it will be allocated like :
+16 bytes, because in memory it will be allocated like that (https://play.golang.org/p/gmkrt6X7aM) :
 
 ![Struct in memory](/images/memorystruct2.png)
 
@@ -47,3 +47,4 @@ fmt.Println(unsafe.Sizeof(b)) // ordered 16 bytes
 
 ### Links :
 https://play.golang.org/p/cUgB54yCpL
+https://play.golang.org/p/gmkrt6X7aM
