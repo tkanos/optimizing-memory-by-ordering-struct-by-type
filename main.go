@@ -6,7 +6,7 @@ import (
 )
 
 type myStruct struct {
-	myInt   bool    // 1 bit
+	myInt   bool    // 1 byte
 	myFloat float64 // 8 bytes
 	myBool  int32   // 4 bytes
 }
@@ -14,7 +14,7 @@ type myStruct struct {
 type myStructOptimized struct {
 	myFloat float64 // 8 bytes
 	myInt   int32   // 4 bytes
-	myBool  bool    // 1 bytes
+	myBool  bool    // 1 byte
 }
 
 func main() {
