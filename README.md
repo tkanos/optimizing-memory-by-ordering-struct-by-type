@@ -45,6 +45,10 @@ fmt.Println(unsafe.Sizeof(b)) // ordered 16 bytes
 
 8 + 8 = 16 bytes
 
+As you can see, there are a padding to respect the data alignment, (https://en.wikipedia.org/wiki/Data_structure_alignment), So it means that in some case the data is not optimally word-aligned (depending on many things processor, cache memory, virtual memory) and it can sometimes slower the application, so benchmark everything :D
+
 ### Links :
 https://play.golang.org/p/cUgB54yCpL
-https://play.golang.org/p/gmkrt6X7aM
+https://github.com/Tkanos/optimizing-memory-by-ordering-struct-by-type
+http://www.catb.org/esr/structure-packing/
+https://en.wikipedia.org/wiki/Data_structure_alignment
